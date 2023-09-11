@@ -1,4 +1,4 @@
-import { cityRepository } from "../repositories/cityRepositories";
+import { cityRepository } from "../repositories/cityRepositories.js";
 
 async function createCity (name) {
 

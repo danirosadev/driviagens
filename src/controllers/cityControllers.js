@@ -1,4 +1,4 @@
-import { cityService } from "../services/cityServices";
+import { cityService } from "../services/cityServices.js";
 
 async function createCity (req, res) {
     try {
