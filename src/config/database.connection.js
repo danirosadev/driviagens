@@ -1,17 +1,14 @@
-import pg from "pg";
-import dotenv from "dotenv";
-dotenv.config();
+import pg from "pg"
+import dotenv from "dotenv"
+dotenv.config()
 
-const { Pool } = pg;
+const { Pool } = pg
 
 const configDatabase = {
   connectionString: process.env.DATABASE_URL,
-  ...(process.env.NODE_ENV === "production" && {
-    ssl: {
-      rejectUnauthorized: true,
-    },
-  }),
 };
+
+if (process.env.NODE_ENV === "production") configDatabase.ssl = true;
 
 const db = new Pool(configDatabase);
 
